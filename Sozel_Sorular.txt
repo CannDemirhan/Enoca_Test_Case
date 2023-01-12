@@ -1,0 +1,28 @@
+S1 - MVC kavramını açıklar mısınız ? Neden ihtiyaç duyuluyor. Java’da nasıl kurgulanıyor. Object Oriented katmanları nelerdir ?
+ * MVC bir yazılım mimari tasarımıdır.
+ * MVC nin tanımında da dediğim gibi birbirinden bağımsız oluşu en kullanışlı yönüdür. 
+ * Model, MVC'de projenin iş mantığının oluşturulduğu bölümdür. Validasyon ve Veri Erişimi de burada gerçekleşmektedir.
+View, MVC'de projenin arayüzünün oluşturuldu bölümdür ve client'e gönderilecek html sayfaları bulur.
+Controller, MVC'de projenin iç süreçlerini kontrol eden bölümdür. Model ile View arasında bağlantı kurulur, client'den 
+gelen istekleri değerlendirir ve isteğe göre ne yapılacağı ve ve dönüleceği belirtilir.
+ * Java'da MVC Spring ile birlikte kullanılabilir. Maven ile birlikte gerekli paketlerin kurulumu yapıldıktan sonra Model, 
+Controller ve View dosyaları hazırlanır.
+ * OOP katmanları ;
+ 	- Storage 
+	- Business Logic
+	- Modeller Command Processor
+	- Controller User Interface
+
+S2 - Birbirinden bağımsız iki platformun birbiriyle haberleşmesi nasıl sağlanabilir. Örneğin, X platformu Java ile yazılmış olsun, Y platform u C# ile. Bu iki platformun bir biri ile iletişim halinde request-response ilişkisi kurması gerekiyor. Bu yapıyı nasıl sağlarız?
+ * Birbirinden bağımsız iki platformu APIler yardımıyla veya TCP bağlantılarıyla haberleştirebiliriz.
+ * Java'da HttpURLConnection Class'ı kullanılabilir.
+
+S3 - Bir web sayfasında ekran sürekli Backend’ den veya bir başka yapı tarafından güncelleniyor. Siz, web sayfasını refresh etmeden bu güncel bilgiyi anlık ekrana nasıl yansıtırsınız?
+ * Javascript ile fetch isteği atıldıktan sonra, Socket.IO ya da MQTT gibi kütüphanler ile event oluşturarak yapılır.
+
+S5 - Firmada çalışman için sana remote bir linux server verildi. Elinde ip adresi port bilgisi kullanıcı adi ve şifren var. Server a erişimi nasıl test edersin, Server a nasıl erişirsin, Server a nasıl dosya atarsın, Serverdan nasıl dosya çekersin?
+ * Terminalden "ssh username@ipaddress:port" ile ssh bağlantısı kurulur sonra şifre girip dosya aktarımı yapılabilir.
+ * "$ sftp username@ipaddress:port
+   $ password
+   $ cd your/path
+   $ put local/file/path/name"
